@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="city-details">
+                <h1>{{ city }} details</h1>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date Time</th>
+                    <th>Temperature &#8451;</th>
+                    <th>Sea Level (hPa)</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="!failedToLoad">
+                <tr *ngFor="let city of cityData">
+                    <td>{{ city.dt_txt }}</td>
+                    <td>{{ city.main.temp }}</td>
+                    <td>{{ city.main.sea_level }}</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr *ngIf="failedToLoad">No data for city is found</tr>
+            </tbody>
+        </table>
+    </div>
+</div>
