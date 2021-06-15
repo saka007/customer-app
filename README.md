@@ -1,4 +1,4 @@
-#ApplicationRunning on 
+# Application live 
 
 https://afsarkhan10182.github.io/weather-app/
 
