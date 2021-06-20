@@ -1,6 +1,6 @@
 # Application live 
 
-https://afsarkhan10182.github.io/weather-app/
+https://saquibrahmani10182.github.io/weather-app/
 
 # WeatherApp
 
