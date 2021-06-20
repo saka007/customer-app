@@ -1,49 +1,60 @@
-<p>customer-add works!</p><button (click)="redirect()">List Customers</button>
-<div class="alert" [class.warning]="errorMessage" *ngIf="errorMessage">
-    <span (click)="clear()" class="closebtn">&times;</span>
-    
-    {{this.errorMessage}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary" (click)="redirect()">List Customers</button>
+            <div class="alert" [class.warning]="errorMessage" *ngIf="errorMessage">
+                <span (click)="clear()" class="closebtn">&times;</span>
+                <p style="text-transform: capitalize;">{{this.errorMessage}}</p>
+            </div>
+            <div class="alert" [class.success]="successResponse" *ngIf="successResponse">
+                <span class="closebtn">&times;</span>
+                {{name}} Added successfully
+            </div>
+            <form [formGroup]="addForm">
+                <div class="form-group">
+                    <label>
+                        Name:
+                        <input class="form-control"  formControlName="name" [ngClass]="{ 'is-invalid': submitted && add.name.errors }"
+                            placeholder="Your name" autocomplete="off">
+                        <div class="is-invalid" *ngIf="submitted && add.name.errors">
+                            Please provide a name.
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Email:
+                        <input class="form-control" formControlName="email" placeholder="Your email" autocomplete="off">
+                        <div style="color: red;"
+                            *ngIf="addForm.get('email').invalid && (addForm.get('email').dirty || addForm.get('email').touched)">
+                            Please provide a valid email address.
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Phone number:
+                        <input class="form-control" formControlName="phone" placeholder="Your message" autocomplete="off">
+                        <div style="color: red;"
+                            *ngIf="addForm.get('phone').invalid && (addForm.get('phone').dirty || addForm.get('phone').touched)">
+                            Please provide a valid phone number.
+                        </div>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Address:
+                        <input class="form-control" formControlName="address" placeholder="Your message" autocomplete="off">
+                    </label>
+                </div>
+                <button class="btn btn-primary" type="submit" (click)="addCustomerData()" [disabled]="addForm.invalid">Send</button>
+            </form>
+
+
+            
+        </div>
+    </div>
 </div>
-<div class="alert" [class.success]="successResponse" *ngIf="successResponse">
-    <span class="closebtn">&times;</span>
-    {{name}} Added successfully
-</div>
-<form [formGroup]="addForm">
-    <div>
-        <label>
-            Name:
-            <input formControlName="name" [ngClass]="{ 'is-invalid': submitted && add.name.errors }"
-                placeholder="Your name" autocomplete="off">
-            <div class="is-invalid" *ngIf="submitted && add.name.errors">
-                Please provide a name.
-            </div>
-        </label>
-    </div>
-    <div>
-        <label>
-            Email:
-            <input formControlName="email" placeholder="Your email" autocomplete="off">
-            <div style="color: red;"
-                *ngIf="addForm.get('email').invalid && (addForm.get('email').dirty || addForm.get('email').touched)">
-                Please provide a valid email address.
-            </div>
-        </label>
-    </div>
-    <div>
-        <label>
-            Phone number:
-            <input formControlName="phone" placeholder="Your message" autocomplete="off">
-            <div style="color: red;"
-                *ngIf="addForm.get('phone').invalid && (addForm.get('phone').dirty || addForm.get('phone').touched)">
-                Please provide a valid phone number.
-            </div>
-        </label>
-    </div>
-    <div>
-        <label>
-            Address:
-            <input formControlName="address" placeholder="Your message" autocomplete="off">
-        </label>
-    </div>
-    <button type="submit" (click)="addCustomerData()" [disabled]="addForm.invalid">Send</button>
-</form>
+
+
+

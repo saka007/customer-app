@@ -1,15 +1,20 @@
 <div class="container">
     <div class="row">
-        <form [formGroup]="searchForm">
-            <input type="text" autocomplete="off" (keyup)="getCustomerList()" formControlName="search">
-        </form>
-        
-            <button type="submit" (click)="addCustomer()" value="Submit">Add Customer</button>
-            
-        
+        <div class="card">
+            <div class="card-body">
+                <form class="form-inline" [formGroup]="searchForm">
+                    <div class="form-group">
+                        <label for="search">Search</label>
+                        <input type="text" autocomplete="off" (keyup)="getCustomerList()" formControlName="search">
+                        <button style="float: right;" class="btn btn-primary" type="submit" (click)="addCustomer()" value="Submit">Add Customer</button>
+                    </div>
+                </form>                
+            </div>
+          </div>
+
         <div *ngFor="let customer of customerList" class="col-md-3">
-            <div (click)="navigateTodetailsPage(customer.id)" class="city-list">
-                <h1>{{ customer.name }}</h1>
+            <div (click)="navigateTodetailsPage(customer.id)" class="customer-list">
+                <p class="lead">{{ customer.name }}</p>
                 <!-- <div class="city-details">Temp: {{ weather.main.temp }}&#8451;</div>
                 <div class="city-details">Sunrise: {{ timeConverter(weather.sys.sunrise) }}</div>
                 <div class="city-details">Sunset: {{ timeConverter(weather.sys.sunset) }}</div> -->

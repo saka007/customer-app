@@ -1,9 +1,9 @@
-.city-list {
+.customer-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 180px;
-    padding: 0px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     margin: 10px;
 
     border: 1px solid;
@@ -12,14 +12,13 @@
     background-color: #48487b;
     color: white;
     cursor: pointer;
-    
+}    
 
     h1 {
         line-height: 1.2;
         font-size: 20px;
     }
 
-    .city-details {
+    .customer-details {
         text-align: center;
     }
-}

@@ -59,7 +59,7 @@ export class CustomerAddComponent implements OnInit {
           
           this.successResponse = false;
           for (const key in error.error) {
-           this.errorMessage += error.error[key];  
+           this.errorMessage += "   "+error.error[key];  
           }
           console.log(this.errorMessage);
           this.loading = false;
