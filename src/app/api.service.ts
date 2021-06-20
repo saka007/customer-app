@@ -7,16 +7,16 @@ import { environment } from '../environments/environment';
 })
 export class ApiService {
 
-  apiWeatherUrl = environment.apiUrl;
+  apiCustomerUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
   getCustomerList() {
-    const apiCall = `${this.apiWeatherUrl}`;
+    const apiCall = `${this.apiCustomerUrl}`;
     return this.http.get(apiCall);
   }
 
   sendCustomerData(requestBody) {
-    const apiCall = `${this.apiWeatherUrl}`;
+    const apiCall = `${this.apiCustomerUrl}`;
     return this.http.post(apiCall, requestBody);
   }
 }

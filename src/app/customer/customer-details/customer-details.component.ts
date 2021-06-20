@@ -11,9 +11,7 @@ import { CustomerService } from '../customer.service';
 
 export class CustomerDetailsComponent implements OnInit {
 
-  city: string;
   getDetailList = [];
-  failedToLoad: boolean;
   
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -26,6 +24,10 @@ export class CustomerDetailsComponent implements OnInit {
       const getCustomerData = this.customerService.getCustomerData();
       this.getDetailList = getCustomerData.filter(val => val['id'] === id);
     });
+  }
+
+  redirectHome() {
+    this.router.navigate(['/']);
   }
 
 }

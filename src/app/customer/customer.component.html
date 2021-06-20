@@ -15,9 +15,6 @@
         <div *ngFor="let customer of customerList" class="col-md-3">
             <div (click)="navigateTodetailsPage(customer.id)" class="customer-list">
                 <p class="lead">{{ customer.name }}</p>
-                <!-- <div class="city-details">Temp: {{ weather.main.temp }}&#8451;</div>
-                <div class="city-details">Sunrise: {{ timeConverter(weather.sys.sunrise) }}</div>
-                <div class="city-details">Sunset: {{ timeConverter(weather.sys.sunset) }}</div> -->
             </div>
         </div>
     </div>
