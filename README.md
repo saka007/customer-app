@@ -1,6 +1,6 @@
 # Application live 
 
-https://saquibrahmani10182.github.io/weather-app/
+https://saka007.github.io/customer-app/
 
 # WeatherApp
 
