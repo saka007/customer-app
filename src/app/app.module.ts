@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeatherComponent } from './weather/weather.component';
+import { CustomerComponent } from './customer/customer.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { CityComponent } from './weather/city/city.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
+import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent,
-    CityComponent
+    CustomerComponent,
+    CustomerDetailsComponent,
+    CustomerAddComponent
   ],
   imports: [
     BrowserModule,

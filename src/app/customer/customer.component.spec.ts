@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { WeatherComponent } from './weather.component';
+import { CustomerComponent } from './customer.component';
 import { ApiService } from "../api.service";
 import { Router } from '@angular/router';
-import { WeatherService } from './weather.service';
+import { CustomerService } from './customer.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-import { AppRoutingModule } from './../app-routing.module';
+import { AppRoutingModule } from '../app-routing.module';
 import { Observable, of } from 'rxjs';
 
-const getWeatherData = {
+const getCustomerData = {
   "cnt": 5,
   "list": [
     {
@@ -213,40 +213,40 @@ const getWeatherData = {
 class ApiServiceStub {
   constructor() { }
 
-  getWeatherByMultipleCityId(queryParams): Observable<any> {
-    return of(getWeatherData);
+  getCustomerByMultipleCityId(queryParams): Observable<any> {
+    return of(getCustomerData);
   }
 }
 
-class WeatherServiceStub {
+class CustomerServiceStub {
   constructor() { }
-  setWeatherData(data: any) {
+  setCustomerData(data: any) {
   }
-  getWeatherData(queryParams): Observable<any> {
-    return of(getWeatherData);
+  getCustomerData(queryParams): Observable<any> {
+    return of(getCustomerData);
   }
 }
 
-describe('WeatherComponent', () => {
-  let component: WeatherComponent;
-  let fixture: ComponentFixture<WeatherComponent>;
+describe('CustomerComponent', () => {
+  let component: CustomerComponent;
+  let fixture: ComponentFixture<CustomerComponent>;
   let router: Router;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [WeatherComponent],
+      declarations: [CustomerComponent],
       imports: [BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
         HttpClientModule],
-      providers: [{ provide: WeatherService, useClass: WeatherServiceStub },
+      providers: [{ provide: CustomerService, useClass: CustomerServiceStub },
       { provide: ApiService, useClass: ApiServiceStub }]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WeatherComponent);
+    fixture = TestBed.createComponent(CustomerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

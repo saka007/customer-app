@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="searchForm">
+            <input type="text" autocomplete="off" (keyup)="getCustomerList()" formControlName="search">
+        </form>
+        <form [formGroup]="CustomerAddForm">
+            <button type="submit" (click)="addCustomer()" value="Submit">Add Customer</button>
+            
+        </form>
+        <div *ngFor="let customer of customerList" class="col-md-3">
+            <div (click)="navigateTodetailsPage(customer.id)" class="city-list">
+                <h1>{{ customer.name }}</h1>
+                <!-- <div class="city-details">Temp: {{ weather.main.temp }}&#8451;</div>
+                <div class="city-details">Sunrise: {{ timeConverter(weather.sys.sunrise) }}</div>
+                <div class="city-details">Sunset: {{ timeConverter(weather.sys.sunset) }}</div> -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="city-details">
-                <h1>{{ city }} details</h1>
+                <h1> details</h1>
             </div>
         </div>
         <table class="table table-bordered">
@@ -13,16 +13,14 @@
                     <th>Sea Level (hPa)</th>
                 </tr>
             </thead>
-            <tbody *ngIf="!failedToLoad">
-                <tr *ngFor="let city of cityData">
-                    <td>{{ city.dt_txt }}</td>
-                    <td>{{ city.main.temp }}</td>
-                    <td>{{ city.main.sea_level }}</td>
+            <tbody>
+                <tr *ngFor="let detail of getDetailList">
+                    <td>{{ detail.name }}</td>
+                    <td>{{ detail.email }}</td>
+                    <td>{{ detail.phone }}</td>
                 </tr>
             </tbody>
-            <tbody>
-                <tr *ngIf="failedToLoad">No data for city is found</tr>
-            </tbody>
+
         </table>
     </div>
 </div>
